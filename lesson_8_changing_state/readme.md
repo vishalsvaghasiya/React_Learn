@@ -7,10 +7,34 @@
 
 state using dynamic dom in change
 
+```js
+state = {
+    name: 'vish',
+    age: 24
+}
+
+handleClick = (e) => {
+    //this.state.name = 'isha';
+    this.setState({
+        name: 'isha',
+        age: 26
+    });
+    console.log(this.state);
+}
+```
+
+Notes:
+
 ```txt
-like
-    add object in data
-    open modal using dynamic data chage
-        showPopUpModal = false
-        showPopUpModal = true
+https://www.w3schools.com/js/js_arrow_function.asp
+Arrow functions were introduced in ES6.
+Arrow functions allow us to write shorter function syntax:
+function 6 in not direct work state
+----------------------------------------------
+js = () => { }
+value of state using * this * keyword function inside direct use value?
+=> arrow function use
+function 7 in not direct work state
+console.log(e.target);
+Uncaught TypeError: Cannot read property 'state' of undefined
 ```
