@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Es 7</title>
+
+
+    <!-- Load Babel v6 -->
+    <!--    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+<!-- ... existing HTML ... -->
+
+<div id="app"></div>
+
+<script type="text/babel">
+    class App extends React.Component {
+
+        state = {
+            name: 'vish',
+            age: 24
+        }
+
+        handleChange = (e) => {
+            this.setState({
+                name: e.target.value
+            })
+        }
+
+        handleSubmit = (e) => {
+            e.preventDefault();
+            console.log('form submitted', this.state.name)
+        }
+
+        render() {
+            return (
+                // jsx (javascript xml)
+                <div className="app-content">
+                    <h1>My Name is {this.state.name}</h1>
+                    <h3>Form</h3>
+                    <form action="" onSubmit={this.handleSubmit}>
+                        <input type="text" onChange={this.handleChange}/>
+                        <button>Submit</button>
+                        {/* // <!-- <button onClick={}>Submit</button> -->*/}
+                    </form>
+                </div>
+            )
+        }
+    }
+    
+    ReactDOM.render(<App/>, document.getElementById('app'));
+</script>
+</body>
+</html>
